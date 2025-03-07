@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 기초 과정 - Min & Choi Study Club</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/NanumSquareNeo-Variable.woff2" rel="stylesheet">
+<style>
+.nanum-square {
+font-family: 'NanumSquareNeo-Variable', sans-serif;
+font-weight: 800;
+}
+</style>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+@keyframes float {
+0% { transform: translateY(0px); }
+50% { transform: translateY(-10px); }
+100% { transform: translateY(0px); }
+}
+.float-animation {
+animation: float 3s ease-in-out infinite;
+}
+</style>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#4F46E5',
+secondary: '#6366F1'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+</head>
+<body class="bg-gradient-to-br from-[#0A1B3F] to-[#2A1B5A] min-h-screen">
+<div class="max-w-7xl mx-auto px-4 py-8">
+<header class="flex justify-between items-center mb-12">
+<img src="https://static.readdy.ai/image/bf44eae05b160a44e8e7e86d1cd3540f/13274e0ae0d842f9cf983ada4b2a31bc.jpeg" alt="Min & Choi Study Club Logo" class="h-12">
+<nav class="flex gap-8">
+<a href="#" class="text-white hover:text-primary transition-colors">홈</a>
+<a href="#" class="text-white hover:text-primary transition-colors">과정 소개</a>
+<a href="#" class="text-white hover:text-primary transition-colors">강사 소개</a>
+<a href="#" class="text-white hover:text-primary transition-colors">수강신청</a>
+</nav>
+</header>
+<main>
+<section class="relative flex items-center justify-between mb-16">
+<div class="w-1/2 pl-8">
+<div class="mb-4">
+<div class="bg-white backdrop-blur-sm rounded-full px-8 py-3 inline-block">
+<p class="text-red-500 text-2xl font-bold">AI 공부방 멤버모집</p>
+</div>
+</div>
+<h1 class="text-white text-7xl font-extrabold leading-tight mb-8 nanum-square">
+<span class="whitespace-nowrap">AI 활용력</span><br>
+<span class="whitespace-nowrap">증대를 위한</span><br>
+<span class="whitespace-nowrap">AI 수학능력</span><br>
+기초 과정<br>
+<span class="text-[#FFE566] text-5xl mt-4 block">3월 반 모집</span>
+</h1>
+</div>
+<div class="w-1/2 relative z-10">
+<img src="https://static.readdy.ai/image/bf44eae05b160a44e8e7e86d1cd3540f/da421efd613a07f640c0956df1468d87.png" alt="Banner" class="object-contain h-[600px] float-animation">
+</div>
+</section>
+<div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 mb-12">
+<ul class="text-white text-3xl space-y-8 text-left nanum-square">
+<li class="flex items-center gap-6">
+<span class="text-4xl font-bold">1.</span>
+AI 학습을 위한 시스템 환경 셋팅법
+</li>
+<li class="flex items-center gap-6">
+<span class="text-4xl font-bold">2.</span>
+챗GPT 프롬프트 작성 공식 기초이해
+</li>
+<li class="flex items-center gap-6">
+<span class="text-4xl font-bold">3.</span>
+MS 코파일럿 & 구글 제미나이 활용팁
+</li>
+<li class="flex items-center gap-6">
+<span class="text-4xl font-bold">4.</span>
+챗GPT 프롬프트 작성 공식의 확장 기법
+</li>
+</ul>
+</div>
+<div class="text-white text-3xl mb-12 nanum-square">
+<p class="mb-6">2025. 3. 7~28 (매주 금요일)</p>
+<p>밤 8~10시 (4주/8시간)</p>
+</div>
+<div class="flex justify-center gap-12">
+<a href="/contact" class="bg-[#FFE566] text-gray-900 px-16 py-8 rounded-button text-4xl font-bold hover:bg-[#FFD700] transition-colors cursor-pointer whitespace-nowrap">
+수강 신청하기
+</a>
+<a href="/about" class="bg-white/20 text-white px-16 py-8 rounded-button text-4xl font-bold hover:bg-white/30 transition-colors cursor-pointer whitespace-nowrap">
+강사 소개
+</a>
+</div>
+</section>
+<section class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-16">
+<h3 class="text-white text-2xl font-bold mb-6">교육 특징</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white/10 rounded-xl p-8">
+<div class="w-16 h-16 bg-[#FFE566] rounded-full flex items-center justify-center mb-6">
+<i class="ri-computer-line text-3xl text-gray-900"></i>
+</div>
+<h4 class="text-white text-3xl font-bold mb-4 nanum-square">실습 중심 교육</h4>
+<p class="text-gray-300 text-2xl">실제 AI 도구를 활용한 hands-on 실습으로 실무 능력 향상</p>
+</div>
+<div class="bg-white/10 rounded-xl p-8">
+<div class="w-16 h-16 bg-[#FFE566] rounded-full flex items-center justify-center mb-6">
+<i class="ri-group-line text-3xl text-gray-900"></i>
+</div>
+<h4 class="text-white text-3xl font-bold mb-4 nanum-square">소그룹 밀착 지도</h4>
+<p class="text-gray-300 text-2xl">최대 12명 소수정예로 진행되는 맞춤형 교육</p>
+</div>
+<div class="bg-white/10 rounded-xl p-8">
+<div class="w-16 h-16 bg-[#FFE566] rounded-full flex items-center justify-center mb-6">
+<i class="ri-user-star-line text-3xl text-gray-900"></i>
+</div>
+<h4 class="text-white text-3xl font-bold mb-4 nanum-square">최고의 강사진</h4>
+<p class="text-gray-300 text-2xl">현업 AI 전문가들로 구성된 검증된 강사진의 생생한 노하우</p>
+</div>
+<div class="bg-white/10 rounded-xl p-8">
+<div class="w-16 h-16 bg-[#FFE566] rounded-full flex items-center justify-center mb-6">
+<i class="ri-rocket-line text-3xl text-gray-900"></i>
+</div>
+<h4 class="text-white text-3xl font-bold mb-4 nanum-square">실무 즉시 적용</h4>
+<p class="text-gray-300 text-2xl">현업에서 바로 활용 가능한 실전 중심의 커리큘럼</p>
+</div>
+</div>
+</div>
+<section class="mb-16">
+<div class="w-full bg-white/10 backdrop-blur-sm rounded-2xl p-12">
+<div class="flex justify-center mb-8">
+<h3 class="text-white text-2xl font-bold px-8 py-2 border-2 border-white rounded-full">수강생 혜택</h3>
+</div>
+<ul class="text-gray-300 space-y-6 text-center text-2xl font-bold">
+<li class="flex items-center justify-center gap-4">
+<i class="ri-check-line text-[#FFE566] text-3xl"></i>
+교육 자료 PDF 제공
+</li>
+<li class="flex items-center justify-center gap-4">
+<i class="ri-check-line text-[#FFE566] text-3xl"></i>
+실습용 프롬프트 템플릿 제공
+</li>
+<li class="flex items-center justify-center gap-4">
+<i class="ri-check-line text-[#FFE566] text-3xl"></i>
+수료증 발급
+</li>
+<li class="flex items-center justify-center gap-4">
+<i class="ri-check-line text-[#FFE566] text-3xl"></i>
+강의 녹화본 제공 (복습용)
+</li>
+<li class="flex items-center justify-center gap-4">
+<i class="ri-check-line text-[#FFE566] text-3xl"></i>
+수강생 전용 커뮤니티 가입
+</li>
+</ul>
+</div>
+</section>
+<section class="mb-16">
+<div class="w-full bg-white/10 backdrop-blur-sm rounded-2xl p-12">
+<div class="flex justify-center mb-8">
+<h3 class="text-white text-2xl font-bold px-8 py-2 border-2 border-white rounded-full">문의하기</h3>
+</div>
+<div class="flex flex-col items-center gap-6">
+<p class="text-gray-300 text-2xl">궁금하신 점이 있으시다면 언제든 문의해주세요.</p>
+<div class="flex gap-8">
+<a href="mailto:contact@minchoiclub.com" class="flex items-center gap-2 text-white hover:text-[#FFE566] transition-colors">
+<i class="ri-mail-line text-2xl"></i>
+<span class="text-xl">contact@minchoiclub.com</span>
+</a>
+<a href="tel:02-1234-5678" class="flex items-center gap-2 text-white hover:text-[#FFE566] transition-colors">
+<i class="ri-phone-line text-2xl"></i>
+<span class="text-xl">02-1234-5678</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="text-center text-gray-400 py-8">
+<p>© 2025 Min & Choi Study Club. All rights reserved.</p>
+</footer>
+</div>
+</body>
+</html>

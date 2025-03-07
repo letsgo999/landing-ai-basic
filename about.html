@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>강사진 소개</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+primary: '#006B5F',
+secondary: '#FFB800'
+},
+borderRadius: {
+'none': '0px',
+'sm': '4px',
+DEFAULT: '8px',
+'md': '12px',
+'lg': '16px',
+'xl': '20px',
+'2xl': '24px',
+'3xl': '32px',
+'full': '9999px',
+'button': '8px'
+}
+}
+}
+}
+</script>
+<style>
+body {
+font-family: 'Noto Sans KR', sans-serif;
+}
+</style>
+</head>
+<body class="bg-white min-h-screen">
+<div class="max-w-7xl mx-auto px-4 py-12">
+<header class="text-center mb-16">
+<h1 class="text-4xl font-bold text-primary mb-4">강사진 소개</h1>
+<p class="text-gray-600">AI 전문가와 함께하는 최고의 교육</p>
+</header>
+<div class="grid md:grid-cols-2 gap-12">
+<!-- 첫 번째 강사 -->
+<div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+<div class="flex flex-col items-center">
+<div class="w-48 h-48 rounded-full overflow-hidden mb-6">
+<img src="https://static.readdy.ai/image/bf44eae05b160a44e8e7e86d1cd3540f/8ad2f294af245feafa387dd5a0cc9b1b.jpeg"
+alt="최교수"
+class="w-full h-full object-cover">
+</div>
+<h2 class="text-2xl font-bold text-gray-800 mb-2">최규문 교수</h2>
+<p class="text-primary font-medium mb-4">디지털 마케팅 전문가</p>
+<div class="space-y-2 text-gray-600 text-center mb-6">
+<p>AI 활용 전도사</p>
+<p>현) 포스트AI 교육센터장</p>
+<p>현) 소셜네트웍코리아 대표</p>
+</div>
+<div class="flex flex-wrap gap-2 justify-center">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">디지털 마케팅</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">AI 마케팅</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">AI 자동화</span>
+</div>
+</div>
+</div>
+<!-- 두 번째 강사 -->
+<div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow">
+<div class="flex flex-col items-center">
+<div class="w-48 h-48 rounded-full overflow-hidden mb-6">
+<img src="https://static.readdy.ai/image/bf44eae05b160a44e8e7e86d1cd3540f/ade46b5b109cbf5d48562feaddee1d95.png"
+alt="민소장"
+class="w-full h-full object-cover">
+</div>
+<h2 class="text-2xl font-bold text-gray-800 mb-2">민진홍 소장</h2>
+<p class="text-primary font-medium mb-4">미라클 마케팅 연구소</p>
+<div class="space-y-2 text-gray-600 text-center mb-6">
+<p>민 AI 아트 대표</p>
+<p>현) 미라클 마케팅 연구소장</p>
+<p>현) 한국 인공지능 교육협회 자문위원</p>
+</div>
+<div class="flex flex-wrap gap-2 justify-center">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">AI 아트</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">AI 컨텐츠 제작</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">AI 마케팅</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<h3 class="text-2xl font-bold text-gray-800 mb-8">강의 주요 내용</h3>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-lg shadow">
+<h4 class="text-xl font-bold text-primary mb-4">AI 시스템 설계</h4>
+<ul class="text-gray-600 text-left space-y-2">
+<li>• AI 모델 아키텍처 설계</li>
+<li>• 성능 최적화 전략</li>
+<li>• 확장성 있는 시스템 구축</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow">
+<h4 class="text-xl font-bold text-primary mb-4">ChatGPT 활용</h4>
+<ul class="text-gray-600 text-left space-y-2">
+<li>• 프롬프트 엔지니어링</li>
+<li>• API 통합 및 개발</li>
+<li>• 비즈니스 응용 사례</li>
+</ul>
+</div>
+<div class="bg-white p-6 rounded-lg shadow">
+<h4 class="text-xl font-bold text-primary mb-4">실무 프로젝트</h4>
+<ul class="text-gray-600 text-left space-y-2">
+<li>• 실제 사례 분석</li>
+<li>• 프로젝트 실습</li>
+<li>• 문제 해결 방법론</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
