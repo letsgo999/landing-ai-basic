@@ -54,7 +54,7 @@ display: block;
 <p class="text-3xl font-bold text-red-600 font-['NanumSquareNeo'] font-black">AI 수능 기초 과정</p>
 <p class="text-2xl font-bold text-red-600 font-['NanumSquareNeo'] font-black">(7기 예비반)</p>
 </div>
-<form id="enrollmentForm" name="contact" method="POST" data-netlify="true" class="space-y-8">
+<form id="enrollmentForm" name="contact" method="POST" data-netlify="true" action="/" class="space-y-8">
 <div class="space-y-4">
 <label class="text-lg font-medium text-gray-900">수강료 선택</label>
 <div class="grid gap-4">
@@ -189,24 +189,26 @@ document.getElementById('closeSuccessModal').addEventListener('click', () => {
   document.getElementById('successModal').classList.add('hidden');
 });
 document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
-  e.preventDefault(); // 기본 제출 막기 (일단 유지)
+  e.preventDefault(); // 기본 제출 막기
   const form = this;
   const formData = new FormData(form);
 
-  fetch('/', {
+  fetch(form.getAttribute('action') || '/', {
     method: 'POST',
     body: formData
   })
   .then(response => {
     if (response.ok) {
-      document.getElementById('successModal').classList.remove('hidden'); // 성공 시 모달 띄우기
+      console.log('제출 성공!'); // 디버깅용 로그
+      document.getElementById('successModal').classList.remove('hidden'); // 성공 모달 띄우기
       form.reset(); // 폼 초기화
     } else {
+      console.error('제출 실패:', response.status); // 디버깅용 로그
       alert('제출에 실패했어요. 다시 시도해주세요!');
     }
   })
   .catch(error => {
-    console.error('에러:', error);
+    console.error('에러 발생:', error); // 디버깅용 로그
     alert('문제가 생겼어요. 다시 시도해주세요!');
   });
 });
