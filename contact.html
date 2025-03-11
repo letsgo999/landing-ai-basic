@@ -194,11 +194,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = this;
     const formData = new FormData(form);
 
-    // 수강료 선택 확인
+    // 수강료 선택 확인 (디버깅 로그 추가)
     const priceSelected = formData.get('price');
+    console.log('priceSelected 값:', priceSelected); // 디버깅용 로그
     if (!priceSelected) {
       alert('수강료를 선택해주세요!');
-      return;
+      return; // 제출 중단
+    }
+
+    // 추가 확인: 라디오 버튼 직접 체크
+    const priceRadios = document.querySelectorAll('input[name="price"]:checked');
+    if (priceRadios.length === 0) {
+      alert('수강료를 선택해주세요!');
+      return; // 제출 중단
     }
 
     fetch(form.getAttribute('action') || '/', {
