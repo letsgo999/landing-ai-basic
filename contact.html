@@ -197,6 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // 수강료 선택 확인 (디버깅 강화)
     const priceInputs = form.querySelectorAll('input[name="price"]:checked');
     const priceSelected = formData.get('price');
+    console.log('priceInputs:', priceInputs);
     console.log('priceInputs 길이:', priceInputs.length);
     console.log('priceSelected 값:', priceSelected);
     if (!priceSelected || priceInputs.length === 0) {
@@ -209,9 +210,10 @@ document.addEventListener('DOMContentLoaded', function() {
     for (let [key, value] of formData.entries()) {
       params.append(key, value);
     }
+    console.log('전송 데이터:', params.toString()); // 디버깅
 
     // 웹훅으로 데이터 전송
-    fetch('https://script.google.com/macros/s/AKfycbxKdf5IjmH_ALNCehapY2w84TCvIWkLDP6JDc8B2EJqPJ9Omghb4JL0SG5Na1xsyb1TMQ/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbzTIInK02WxCYfXoIAiHjkAP7NmeHyexdPujrQRr7rSHsMTLueUec-fsePFWaTd_hpc1Q/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: params.toString()
