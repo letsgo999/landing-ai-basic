@@ -59,7 +59,7 @@ display: block;
 <label class="text-lg font-medium text-gray-900">수강료 선택</label>
 <div class="grid gap-4">
 <div class="relative">
-<input type="radio" name="price" value="99000" class="radio-button hidden" id="price1" required>
+<input type="radio" name="price" value="99000" class="radio-button hidden" id="price1">
 <label for="price1" class="flex items-center p-4 border-2 rounded-lg cursor-pointer hover:border-primary transition-colors">
 <span class="check-icon hidden text-primary mr-3">
 <i class="ri-check-line ri-lg"></i>
@@ -175,42 +175,52 @@ display: block;
 </div>
 </div>
 <script>
-document.getElementById('privacyButton').addEventListener('click', () => {
-  document.getElementById('privacyModal').classList.remove('hidden');
-});
-document.getElementById('closePrivacyModal').addEventListener('click', () => {
-  document.getElementById('privacyModal').classList.add('hidden');
-});
-document.getElementById('confirmPrivacy').addEventListener('click', () => {
-  document.getElementById('privacyModal').classList.add('hidden');
-  document.getElementById('privacy').checked = true;
-});
-document.getElementById('closeSuccessModal').addEventListener('click', () => {
-  document.getElementById('successModal').classList.add('hidden');
-});
-document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
-  e.preventDefault(); // 기본 제출 막기
-  const form = this;
-  const formData = new FormData(form);
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('privacyButton').addEventListener('click', () => {
+    document.getElementById('privacyModal').classList.remove('hidden');
+  });
+  document.getElementById('closePrivacyModal').addEventListener('click', () => {
+    document.getElementById('privacyModal').classList.add('hidden');
+  });
+  document.getElementById('confirmPrivacy').addEventListener('click', () => {
+    document.getElementById('privacyModal').classList.add('hidden');
+    document.getElementById('privacy').checked = true;
+  });
+  document.getElementById('closeSuccessModal').addEventListener('click', () => {
+    document.getElementById('successModal').classList.add('hidden');
+  });
+  document.getElementById('enrollmentForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // 기본 제출 막기
+    const form = this;
+    const formData = new FormData(form);
 
-fetch('/', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  body: new URLSearchParams(formData).toString()
-})
-  .then(response => {
-    if (response.ok) {
-      console.log('제출 성공!'); // 디버깅용 로그
-      document.getElementById('successModal').classList.remove('hidden'); // 성공 모달 띄우기
-      form.reset(); // 폼 초기화
-    } else {
-      console.error('제출 실패:', response.status); // 디버깅용 로그
-      alert('제출에 실패했어요. 다시 시도해주세요!');
+    // 수강료 선택 확인
+    const priceSelected = formData.get('price');
+    if (!priceSelected) {
+      alert('수강료를 선택해주세요!');
+      return;
     }
-  })
-  .catch(error => {
-    console.error('에러 발생:', error); // 디버깅용 로그
-    alert('문제가 생겼어요. 다시 시도해주세요!');
+
+    fetch(form.getAttribute('action') || '/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(response => {
+      console.log('응답 상태:', response.status); // 디버깅용 로그
+      if (response.ok) {
+        console.log('제출 성공!'); // 디버깅용 로그
+        document.getElementById('successModal').classList.remove('hidden'); // 성공 모달 띄우기
+        form.reset(); // 폼 초기화
+      } else {
+        console.error('제출 실패:', response.status); // 디버깅용 로그
+        alert('제출에 실패했어요. 다시 시도해주세요!');
+      }
+    })
+    .catch(error => {
+      console.error('에러 발생:', error); // 디버깅용 로그
+      alert('문제가 생겼어요. 다시 시도해주세요!');
+    });
   });
 });
 </script>
