@@ -193,10 +193,11 @@ document.getElementById('enrollmentForm').addEventListener('submit', function(e)
   const form = this;
   const formData = new FormData(form);
 
-  fetch(form.getAttribute('action') || '/', {
-    method: 'POST',
-    body: formData
-  })
+fetch('/', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  body: new URLSearchParams(formData).toString()
+})
   .then(response => {
     if (response.ok) {
       console.log('제출 성공!'); // 디버깅용 로그
