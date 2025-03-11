@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const form = this;
     const formData = new FormData(form);
 
-    // 수강료 선택 확인 (디버깅 로그 추가)
+    // 수강료 선택 확인
     const priceSelected = formData.get('price');
     console.log('priceSelected 값:', priceSelected); // 디버깅용 로그
     if (!priceSelected) {
@@ -202,31 +202,34 @@ document.addEventListener('DOMContentLoaded', function() {
       return; // 제출 중단
     }
 
-    // 추가 확인: 라디오 버튼 직접 체크
-    const priceRadios = document.querySelectorAll('input[name="price"]:checked');
-    if (priceRadios.length === 0) {
-      alert('수강료를 선택해주세요!');
-      return; // 제출 중단
-    }
+    // 폼 데이터를 JSON 객체로 변환
+    const data = {
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      email: formData.get('email'),
+      price: formData.get('price'),
+      privacy: formData.get('privacy') ? "동의" : "미동의" // 체크박스 상태에 따라 값 설정
+    };
 
-    fetch(form.getAttribute('action') || '/', {
+    // 웹훅으로 데이터 전송
+    fetch('[YOUR_WEBAPP_URL]', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString()
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
     })
     .then(response => {
       console.log('응답 상태:', response.status); // 디버깅용 로그
       if (response.ok) {
-        console.log('제출 성공!'); // 디버깅용 로그
+        console.log('웹훅 전송 성공!');
         document.getElementById('successModal').classList.remove('hidden'); // 성공 모달 띄우기
         form.reset(); // 폼 초기화
       } else {
-        console.error('제출 실패:', response.status); // 디버깅용 로그
-        alert('제출에 실패했어요. 다시 시도해주세요!');
+        console.error('웹훅 전송 실패:', response.status);
+        alert('데이터 전송에 실패했어요. 다시 시도해주세요!');
       }
     })
     .catch(error => {
-      console.error('에러 발생:', error); // 디버깅용 로그
+      console.error('에러 발생:', error);
       alert('문제가 생겼어요. 다시 시도해주세요!');
     });
   });
